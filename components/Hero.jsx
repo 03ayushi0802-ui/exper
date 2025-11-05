@@ -1,19 +1,20 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslation } from "@/lib/translations";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-
-import { homePageContent } from "@/constant";
 export function Hero() {
-  const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 0.24], [2.5, 1]);
+  const { language } = useLanguage();
+  const t = (key) => getTranslation(language, key);
+
   return (
     <section className="relative md:block mx-auto py-8 md:py-16">
       <motion.section 
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: true, amount: 0.2 }}
         className="relative w-full overflow-hidden"
       >
@@ -21,45 +22,39 @@ export function Hero() {
         <div className="relative z-10 flex items-center justify-center h-full px-4">
           <div className="section-card w-full max-w-6xl" data-section="about">
             <motion.h1 
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-bold text-spiritual-gold mb-6 mt-2 font-quicksand"
+              style={{ fontFamily: language === 'hi' ? 'Noto Serif Devanagari, serif' : 'inherit' }}
             >
-              About
+              {t('aboutHero.title')}
             </motion.h1>
             <div className="container flex flex-col md:flex-row mx-auto gap-8">
               <motion.div 
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
                 className="max-w-prose space-y-6"
               >
-                <p className="font-medium md:text-lg text-spiritual-green leading-relaxed">
-                  Lord Shri Badrinath's treasurer, Shri Kuber Bhandari, the
-                  treasurer of the gods, resides in this divine Kuber temple in
-                  Pandukeshwar during winters. It is near Yog Badri which is one
-                  of the Panch Badri.
+                <p className="font-medium md:text-lg text-spiritual-green leading-relaxed" style={{ fontFamily: language === 'hi' ? 'Noto Serif Devanagari, serif' : 'inherit' }}>
+                  {t('aboutHero.paragraph1')}
                 </p>
 
-                <p className="font-medium md:text-lg text-spiritual-green leading-relaxed">
-                  In Vastu Shastra, the building or plot facing Ishan Mukha is
-                  compared to Kuber Dev's city Alkapuri, the remote Alkapuri is
-                  the origin of the Alaknanda river.
+                <p className="font-medium md:text-lg text-spiritual-green leading-relaxed" style={{ fontFamily: language === 'hi' ? 'Noto Serif Devanagari, serif' : 'inherit' }}>
+                  {t('aboutHero.paragraph2')}
                 </p>
 
-                <p className="font-medium md:text-lg text-spiritual-green leading-relaxed">
-                  Alkapuri is located at the base of the Balkunwar peak at an
-                  altitude of 4,600 meters above sea level near Badrinath in
-                  Chamoli district of Uttarakhand.
+                <p className="font-medium md:text-lg text-spiritual-green leading-relaxed" style={{ fontFamily: language === 'hi' ? 'Noto Serif Devanagari, serif' : 'inherit' }}>
+                  {t('aboutHero.paragraph3')}
                 </p>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
               >
                 <Image

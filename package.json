@@ -28,6 +28,7 @@
     "framer-motion": "^12.6.3",
     "gasp": "^0.0.2",
     "gsap": "^3.12.7",
+    "jose": "^6.1.0",
     "jsonwebtoken": "^9.0.2",
     "jspdf": "^3.0.3",
     "lucide-react": "^0.477.0",

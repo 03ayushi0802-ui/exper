@@ -50,10 +50,10 @@ export default function Contact() {
             
             {/* Contact Information */}
             <motion.div 
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
               className="space-y-6"
             >
               <div className="bg-ivory border border-sandalwood/15 rounded-sm p-8 shadow-sm">
