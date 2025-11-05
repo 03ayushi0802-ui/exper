@@ -93,9 +93,9 @@ const ReachUs = () => {
 
         <div className="relative z-10 h-full flex items-center justify-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="text-center text-ivory px-4 space-y-4"
           >
             <h1 className="text-5xl md:text-6xl font-light tracking-wide" style={{ fontFamily: language === 'hi' ? 'Noto Serif Devanagari, serif' : 'Cormorant Garamond, serif' }}>
@@ -114,10 +114,10 @@ const ReachUs = () => {
       <section className="py-16 px-4 bg-ivory border-b border-sandalwood/10">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
             className="text-4xl md:text-5xl font-light text-center text-deep-brown mb-4 tracking-wide" style={{ fontFamily: language === 'hi' ? 'Noto Serif Devanagari, serif' : 'Cormorant Garamond, serif' }}
           >
             {language === 'hi' ? 'कैसे पहुंचें' : 'How to Reach'}
@@ -132,10 +132,10 @@ const ReachUs = () => {
             {travelModes.map((mode, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true, amount: 0.2 }}
                 className="bg-heritage-cream border border-sandalwood/15 rounded-sm p-8 shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="text-sandalwood mb-4 flex justify-center">

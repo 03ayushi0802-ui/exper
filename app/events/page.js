@@ -6,6 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslation } from "@/lib/translations";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Events() {
   const { language } = useLanguage();
@@ -98,8 +99,12 @@ export default function Events() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((event, idx) => (
-              <div 
+              <motion.div 
                 key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                viewport={{ once: true, amount: 0.2 }}
                 className="bg-ivory border border-sandalwood/15 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="relative h-56">
@@ -127,7 +132,7 @@ export default function Events() {
                     {event.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

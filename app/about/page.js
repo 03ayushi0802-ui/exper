@@ -130,10 +130,10 @@ export default function About() {
         <div className="relative max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
               className="md:w-1/2"
             >
               <Image
@@ -145,10 +145,10 @@ export default function About() {
               />
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
               className="md:w-1/2 space-y-4"
             >
               <h1 className="text-4xl md:text-5xl font-light text-deep-brown tracking-wide" style={{ fontFamily: language === 'hi' ? 'Noto Serif Devanagari, serif' : 'Cormorant Garamond, serif' }}>
@@ -175,10 +175,10 @@ export default function About() {
             {deities.map((god, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                viewport={{ once: true, amount: 0.2 }}
                 className="bg-ivory border border-sandalwood/15 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="relative h-64">
@@ -213,10 +213,10 @@ export default function About() {
           </h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
             className="text-lg text-incense font-light text-center max-w-4xl mx-auto mb-12" style={{ fontFamily: language === 'hi' ? 'Noto Serif Devanagari, serif' : 'inherit' }}
           >
             {language === 'hi'
@@ -229,10 +229,10 @@ export default function About() {
             {festivals.map((fest, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                viewport={{ once: true, amount: 0.2 }}
                 className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8`}
               >
                 <div className="md:w-1/2">

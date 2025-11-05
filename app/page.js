@@ -53,16 +53,16 @@ export default function Home() {
         <div className="relative grid md:grid-cols-2 min-h-[600px] md:min-h-[700px]">
           {/* Left: Content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex flex-col justify-center px-6 md:px-12 lg:px-20 py-20 bg-heritage-cream/90"
           >
             <div className="max-w-xl space-y-6">
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
                 className="text-sandalwood text-xs font-light tracking-[0.3em] uppercase block"
                 style={{ fontFamily: language === 'hi' ? 'Noto Serif Devanagari, serif' : 'Cormorant Garamond, serif' }}
               >
@@ -99,9 +99,9 @@ export default function Home() {
 
           {/* Right: Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 1.05 }}
+            initial={{ opacity: 0, scale: 1.02 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="relative min-h-[400px] md:min-h-full"
           >
             <Image
@@ -128,10 +128,10 @@ export default function Home() {
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                viewport={{ once: true, amount: 0.3 }}
                 className="space-y-2"
               >
                 <div className="text-4xl md:text-5xl font-light text-sandalwood" style={{ fontFamily: language === 'hi' ? 'Noto Serif Devanagari, serif' : 'Cormorant Garamond, serif' }}>
@@ -149,10 +149,10 @@ export default function Home() {
       {/* About Section - Minimal */}
       <section className="py-20 px-4 max-w-6xl mx-auto bg-white">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="grid md:grid-cols-2 gap-12 items-center"
         >
           <div className="relative h-[400px] md:h-[500px] rounded overflow-hidden shadow-xl order-2 md:order-1">
@@ -190,10 +190,10 @@ export default function Home() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-spiritual-green mb-4 font-quicksand">
@@ -213,10 +213,10 @@ export default function Home() {
             ].map((img, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                viewport={{ once: true, amount: 0.2 }}
                 className="relative h-64 rounded-lg overflow-hidden group cursor-pointer"
               >
                 <Image
@@ -244,10 +244,10 @@ export default function Home() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
             className="text-center mb-16"
           >
             <span className="text-[#C97A3C] text-sm font-semibold tracking-wider uppercase mb-3 block">
@@ -265,10 +265,10 @@ export default function Home() {
       {services.map((service, idx) => (
         <motion.div
           key={idx}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: idx * 0.1 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: idx * 0.05 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
         >
           <div className="relative h-56 overflow-hidden">
@@ -305,10 +305,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative h-full flex items-center justify-center px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
             className="text-center text-white max-w-3xl"
           >
            <h2 className="text-3xl md:text-5xl font-bold mb-6">
@@ -325,10 +325,10 @@ export default function Home() {
       <section className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <span className="text-[#C97A3C] text-sm font-semibold tracking-wider uppercase mb-3 block">
             {t("donation.tagline")}
